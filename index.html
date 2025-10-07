@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QueenBee Gifts & Flowers | Premium Floral Arrangements in Nairobi, Kenya</title>
+  <meta name="description" content="QueenBee Gifts & Flowers — handcrafted floral arrangements & curated gifts. Same-day delivery in Nairobi.">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root{
+      --gold: #D4AF37;
+      --royal-purple: #52245B;
+      --deep-purple: #4A235A;
+      --cream: #FFF8EE;
+      --cream-overlay: rgba(255, 248, 238, 0.95);
+      --accent-pink: #D291BC;
+      --text-dark: #2C3E50;
+      --max-width: 1200px;
+      --glass: rgba(255,255,255,0.9);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;font-family:'Poppins',sans-serif;color:var(--text-dark);background:linear-gradient(#fff8ee,#ffffff);-webkit-font-smoothing:antialiased}
+    h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;color:var(--deep-purple);margin:0}
+
+    .container{width:90%;max-width:var(--max-width);margin:0 auto;padding:0 10px}
+
+    .top-bar{
+      background:var(--royal-purple);
+      color:#fff;
+      font-size:0.95rem;
+      padding:8px 0;
+    }
+    .top-bar .bar-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;width:90%;max-width:var(--max-width);margin:0 auto}
+    .top-left{display:flex;align-items:center;gap:10px;font-weight:500}
+    .top-left .kenya-flag{width:22px;height:16px;background:linear-gradient(to bottom,black 33%,red 33%,red 66%,green 66%);border-radius:2px;display:inline-block}
+    .top-right{font-weight:600}
+
+    header{
+      position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.98);box-shadow:0 6px 18px rgba(0,0,0,0.06);backdrop-filter:saturate(120%) blur(4px)
+    }
+    .header-inner{display:flex;align-items:center;justify-content:space-between;width:90%;max-width:var(--max-width);margin:0 auto;padding:14px 10px;gap:12px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo-icon{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--accent-pink));display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;box-shadow:0 6px 18px rgba(74,35,90,0.12)}
+    .logo-text h1{font-size:1.45rem;color:var(--deep-purple);letter-spacing:1px}
+    .logo-text p{font-size:0.75rem;color:#6b4c7c;letter-spacing:1.5px;margin-top: -2px}
+
+    nav ul{display:flex;gap:26px;list-style:none;align-items:center}
+    nav a{color:var(--deep-purple);text-decoration:none;font-weight:500;padding:6px 0;position:relative}
+    nav a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--gold);transition:width .28s}
+    nav a:hover{color:var(--gold)}
+    nav a:hover::after{width:100%}
+
+    .header-actions{display:flex;align-items:center;gap:16px}
+    .icon-btn{font-size:1.15rem;color:var(--deep-purple);cursor:pointer;transition:color .25s}
+    .icon-btn:hover{color:var(--gold)}
+    .mobile-btn{display:none;font-size:1.35rem;color:var(--deep-purple);cursor:pointer}
+
+    .hero{min-height:78vh;display:flex;align-items:center;padding:60px 0;background:linear-gradient(rgba(255,248,238,0.82),rgba(255,248,238,0.92)),url('https://images.unsplash.com/photo-1487070183337-51f6b2226bf0?auto=format&fit=crop&w=2000&q=60');background-size:cover;background-position:center}
+    .hero-inner{width:90%;max-width:900px;margin:0 auto;background:rgba(255,255,255,0.78);backdrop-filter:blur(6px);padding:36px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.08)}
+    .hero h2{font-size:2.8rem;line-height:1.05;margin-bottom:14px}
+    .hero p{font-size:1.05rem;margin-bottom:18px;color:rgba(44,62,80,0.9)}
+    .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{display:inline-block;background:var(--gold);color:#fff;padding:12px 22px;border-radius:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.6px;box-shadow:0 8px 18px rgba(164,121,37,0.12);border:none;cursor:pointer;text-decoration:none}
+    .btn.secondary{background:var(--deep-purple)}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(74,35,90,0.12)}
+
+    section{padding:70px 0}
+    .section-title{text-align:center;margin-bottom:36px}
+    .section-title h2{font-size:2.4rem;display:inline-block;position:relative}
+    .section-title h2::after{content:'';position:absolute;left:50%;transform:translateX(-50%);bottom:-12px;width:48px;height:3px;background:var(--gold)}
+    .section-sub{color:rgba(44,62,80,0.85);max-width:760px;margin:12px auto 0;font-size:1rem}
+
+    .category-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+    .card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,0.06);transition:transform .28s}
+    .card:hover{transform:translateY(-8px)}
+    .card .img{height:200px;overflow:hidden}
+    .card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+    .card:hover img{transform:scale(1.08)}
+    .card .body{padding:18px;text-align:center}
+    .card h3{margin-bottom:10px;color:var(--deep-purple)}
+    .card p{color:rgba(44,62,80,0.8);font-size:0.96rem;margin-bottom:14px}
+
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+    .gallery-item{height:160px;overflow:hidden;border-radius:10px}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s}
+    .gallery-item:hover img{transform:scale(1.05)}
+
+    .products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+    .product-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,0.06)}
+    .product-card .pimg{height:240px;overflow:hidden}
+    .product-card .pimg img{width:100%;height:100%;object-fit:cover}
+    .product-card .pbody{padding:18px}
+    .price{color:var(--gold);font-weight:700;margin:8px 0;font-size:1.05rem}
+    .product-card .meta{display:flex;justify-content:space-between;align-items:center;gap:8px}
+
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+    .about-grid img{width:100%;border-radius:12px;box-shadow:0 12px 26px rgba(0,0,0,0.08)}
+
+    .testimonials .slider{max-width:900px;margin:0 auto;position:relative}
+    .testimonial{display:none;background:#fff;padding:30px;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,0.06)}
+    .testimonial.active{display:block;animation:fadeIn .7s}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+    .testimonial p{font-style:italic;color:rgba(44,62,80,0.9);line-height:1.7}
+    .testimonial .author{margin-top:14px;font-weight:600;color:var(--deep-purple)}
+
+    .slider-dots{display:flex;gap:10px;justify-content:center;margin-top:18px}
+    .dot{width:12px;height:12px;border-radius:50%;background:var(--accent-pink);cursor:pointer;transition:all .2s}
+    .dot.active{background:var(--gold)}
+
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .contact-card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 12px 30px rgba(0,0,0,0.06)}
+    .contact-item{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px}
+    .contact-item i{color:var(--gold);font-size:1.1rem;width:28px}
+
+    .form-group{margin-bottom:14px}
+    input[type="text"],input[type="email"],input[type="tel"],textarea,select{width:100%;padding:12px;border-radius:8px;border:1px solid #e6e6e6;font-size:0.96rem}
+    textarea{min-height:140px;resize:vertical}
+    .submit{background:var(--deep-purple);color:#fff;padding:12px 18px;border-radius:10px;border:none;font-weight:600}
+
+    footer{background:var(--deep-purple);color:#fff;padding:48px 0}
+    .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+    footer a{color:#efefef;text-decoration:none}
+    .socials a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.06);margin-right:10px;color:#fff}
+
+    /* CART / MODAL */
+    .cart-button {
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      z-index:1400;
+      background:var(--deep-purple);
+      color:#fff;
+      border-radius:14px;
+      padding:14px 16px;
+      box-shadow:0 12px 30px rgba(0,0,0,0.18);
+      display:flex;
+      align-items:center;
+      gap:10px;
+      cursor:pointer;
+      border:none;
+      font-weight:700;
+    }
+    .cart-count {
+      background:var(--gold);
+      color:#111;
+      padding:6px 8px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:0.85rem;
+    }
+
+    /* Modal overlay & modal */
+    .overlay {
+      position:fixed;
+      inset:0;
+      background:var(--cream-overlay);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:1500;
+      padding:20px;
+    }
+    .cart-modal {
+      width:100%;
+      max-width:720px;
+      background:var(--glass);
+      border-radius:14px;
+      box-shadow:0 30px 80px rgba(74,35,90,0.18);
+      overflow:hidden;
+      transform:translateY(20px);
+      transition:transform .26s,opacity .26s;
+    }
+    .cart-modal.show { transform:none; }
+    .cart-header { padding:18px 20px; display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #f0eaea;background:linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.86));}
+    .cart-body { padding:18px 20px; max-height:60vh; overflow:auto; }
+    .cart-row { display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px dashed #eee }
+    .cart-row img{width:64px;height:64px;border-radius:8px;object-fit:cover}
+    .cart-row .meta{flex:1}
+    .qty-controls { display:flex;gap:8px;align-items:center }
+    .qty-controls button{padding:6px 8px;border-radius:8px;border:1px solid #e6e6e6;background:#fff;cursor:pointer}
+    .cart-footer { padding:16px 20px; border-top:1px solid #f0eaea; display:grid; gap:10px; background:linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.92));}
+    .cart-footer .row { display:flex;justify-content:space-between;align-items:center }
+    .checkout-btn { background:var(--royal-purple); color:#fff; padding:12px; border-radius:10px; border:none; font-weight:700; cursor:pointer }
+    .secondary-btn { background:#fff; border:1px solid #ddd; padding:10px 12px; border-radius:8px; cursor:pointer }
+
+    /* small */
+    @media (max-width:980px){
+      .about-grid{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:repeat(2,1fr)}
+      nav ul{display:none}
+      .mobile-btn{display:block}
+      .header-actions{gap:10px}
+      .hero h2{font-size:2rem}
+      .cart-modal { max-width:92%; }
+    }
+    @media (max-width:560px){
+      .top-bar .bar-inner{padding:0 10px;flex-direction:column;gap:8px}
+      .gallery-item{height:120px}
+      .hero-inner{padding:22px}
+      .hero h2{font-size:1.6rem}
+    }
+
+    .mobile-nav{position:fixed;right:16px;top:74px;background:#fff;border-radius:12px;box-shadow:0 14px 40px rgba(0,0,0,0.12);overflow:hidden;padding:10px;display:none;z-index:1200}
+    .mobile-nav a{display:block;padding:10px 14px;color:var(--deep-purple);font-weight:600;border-radius:8px}
+    .mobile-nav a:hover{background:linear-gradient(90deg,var(--cream),#fff9f0)}
+  </style>
+</head>
+<body>
+
+  <!-- TOP INFO BAR -->
+  <div class="top-bar" role="region" aria-label="top information bar">
+    <div class="bar-inner">
+      <div class="top-left">
+        <span class="kenya-flag" aria-hidden="true"></span>
+        <span>Nairobi, Kenya</span>
+        <span aria-hidden="true">|</span>
+        <span><i class="fas fa-phone" aria-hidden="true"></i> +254 705 561 386</span>
+      </div>
+      <div class="top-right">
+        Free Delivery in Nairobi for Orders Over <strong class="currency">KSh 2,000</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header id="mainHeader" role="banner" aria-label="Main header">
+    <div class="header-inner">
+      <div class="logo">
+        <div class="logo-icon" aria-hidden="true">♛</div>
+        <div class="logo-text">
+          <h1>QUEENBEE</h1>
+          <p>Gifts & Flowers</p>
+        </div>
+      </div>
+
+      <nav role="navigation" aria-label="Primary">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="header-actions" aria-hidden="true">
+          <i class="fas fa-search icon-btn" title="Search"></i>
+          <button class="cart-button" id="openCartBtn" aria-label="Open cart">
+            <i class="fas fa-shopping-bag" style="font-size:1rem"></i>
+            <span style="margin-left:6px">Cart</span>
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+          <i class="fas fa-user icon-btn" title="Account"></i>
+        </div>
+        <div class="mobile-btn" id="mobileToggle"><i class="fas fa-bars"></i></div>
+      </div>
+    </div>
+
+    <!-- mobile nav panel -->
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#products">Products</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero" id="home" aria-label="hero">
+      <div class="hero-inner container" role="region" aria-labelledby="hero-title">
+        <h2 id="hero-title">Royal Floral Arrangements & Exquisite Gifts</h2>
+        <p>QueenBee crafts handcrafted bouquets and thoughtfully curated gifts — delivered fresh across Nairobi with care and elegance.</p>
+        <div class="hero-ctas">
+          <a class="btn" href="#products">Shop Now</a>
+          <a class="btn secondary" href="#categories">Explore Collections</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section id="categories" aria-labelledby="cat-title">
+      <div class="container">
+        <div class="section-title">
+          <h2 id="cat-title">Our Categories</h2>
+          <p class="section-sub">Find the perfect arrangement for birthdays, weddings, sympathy, or just because — handcrafted by local florists.</p>
+        </div>
+
+        <div class="category-grid">
+          <article class="card" role="article">
+            <div class="img"><img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=1200&q=60" alt="Birthday flowers"></div>
+            <div class="body">
+              <h3>Birthday Flowers</h3>
+              <p>Bright, joyful arrangements that make birthdays unforgettable.</p>
+              <a class="btn" href="#products">Explore</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="img"><img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=60" alt="Romantic bouquets"></div>
+            <div class="body">
+              <h3>Romantic Bouquets</h3>
+              <p>Timeless roses and elegant mixes for love and anniversaries.</p>
+              <a class="btn" href="#products">Explore</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="img"><img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=1200&q=60" alt="Sympathy arrangements"></div>
+            <div class="body">
+              <h3>Sympathy Arrangements</h3>
+              <p>Respectful and tasteful designs for moments of remembrance.</p>
+              <a class="btn" href="#products">Explore</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="img"><img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=1200&q=60" alt="Gifts"></div>
+            <div class="body">
+              <h3>Unique Gifts</h3>
+              <p>Handpicked hampers, candles, and gourmet treats paired with flowers.</p>
+              <a class="btn" href="#products">Explore</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS: 5 demo products -->
+    <section id="products" aria-labelledby="prod-title">
+      <div class="container">
+        <div class="section-title">
+          <h2 id="prod-title">Featured Products</h2>
+          <p class="section-sub">Our most loved arrangements — ready to order and delivered across Nairobi.</p>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+          <!-- Product cards inserted by JS for consistency with cart data -->
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section-title">
+          <h2 id="gallery-title">Gallery</h2>
+          <p class="section-sub">A selection of our favourite arrangements and event installations.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1499696012324-0a03b7313fb7?auto=format&fit=crop&w=900&q=60" alt=""></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&w=900&q=60" alt=""></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=60" alt=""></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=900&q=60" alt=""></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1524594154909-2a6b9b8c8d2f?auto=format&fit=crop&w=900&q=60" alt=""></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=900&q=60" alt=""></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-title">
+          <h2 id="about-title">Our Kenyan Story</h2>
+          <p class="section-sub">Handcrafted by local florists since 2015 — quality, freshness, and community at the core.</p>
+        </div>
+
+        <div class="about-grid">
+          <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1400&q=60" alt="Florist arranging flowers">
+          <div>
+            <h3>We craft with care</h3>
+            <p>QueenBee began as a small local florist in Nairobi with a passion for creating beautiful, unique arrangements that bring joy to people’s lives. We partner with Kenyan growers to bring you the freshest blooms while supporting sustainable practices.</p>
+
+            <div style="margin-top:18px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
+              <div style="display:flex;gap:10px;align-items:flex-start">
+                <i class="fas fa-award" style="color:var(--gold);font-size:20px;margin-top:6px"></i>
+                <div><strong>Locally Sourced</strong><div style="color:rgba(44,62,80,0.8)">Fresh flowers from Kenyan farms.</div></div>
+              </div>
+
+              <div style="display:flex;gap:10px;align-items:flex-start">
+                <i class="fas fa-shipping-fast" style="color:var(--gold);font-size:20px;margin-top:6px"></i>
+                <div><strong>Nairobi Delivery</strong><div style="color:rgba(44,62,80,0.8)">Same-day delivery for orders placed before 2pm.</div></div>
+              </div>
+
+              <div style="display:flex;gap:10px;align-items:flex-start">
+                <i class="fas fa-hand-holding-heart" style="color:var(--gold);font-size:20px;margin-top:6px"></i>
+                <div><strong>Handcrafted</strong><div style="color:rgba(44,62,80,0.8)">Every bouquet is personally arranged by our florists.</div></div>
+              </div>
+
+              <div style="display:flex;gap:10px;align-items:flex-start">
+                <i class="fas fa-heart" style="color:var(--gold);font-size:20px;margin-top:6px"></i>
+                <div><strong>Customer Love</strong><div style="color:rgba(44,62,80,0.8)">Thousands of happy customers across Kenya.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" aria-labelledby="testi-title">
+      <div class="container">
+        <div class="section-title">
+          <h2 id="testi-title">Customer Testimonials</h2>
+          <p class="section-sub">Real feedback from our Nairobi customers.</p>
+        </div>
+
+        <div class="testimonials">
+          <div class="slider">
+            <div class="testimonial active">
+              <p>"The bouquet I ordered for my wife's birthday was absolutely stunning! She couldn't stop smiling. The flowers stayed fresh for over a week."</p>
+              <div class="author">— James Mwangi, Karen</div>
+            </div>
+
+            <div class="testimonial">
+              <p>"I'm always impressed with QueenBee's attention to detail. Their arrangements are creative and unique."</p>
+              <div class="author">— Wanjiku Njoroge, Westlands</div>
+            </div>
+
+            <div class="testimonial">
+              <p>"The gift basket I ordered for my colleague's promotion was a huge hit! The combination of flowers and gourmet treats was perfect."</p>
+              <div class="author">— David Ochieng, Kilimani</div>
+            </div>
+
+            <div class="testimonial">
+              <p>"As a wedding planner, I trust QueenBee with all my floral arrangements. Quality and attention to detail are unmatched."</p>
+              <div class="author">— Grace Akinyi, Lavington</div>
+            </div>
+          </div>
+
+          <div class="slider-dots" aria-hidden="true">
+            <div class="dot active" data-index="0"></div>
+            <div class="dot" data-index="1"></div>
+            <div class="dot" data-index="2"></div>
+            <div class="dot" data-index="3"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-title">
+          <h2 id="contact-title">Contact Us</h2>
+          <p class="section-sub">Visit our store, call, or send a message — we’d love to hear from you.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Visit Our Store</h3>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div>City Market, Muindi Mbingu Street, Nairobi, Kenya</div></div>
+            <div class="contact-item"><i class="fas fa-phone"></i><div>+254 705 561 386</div></div>
+            <div class="contact-item"><i class="fas fa-envelope"></i><div>gikonyomercy490@gmail.com</div></div>
+            <div class="contact-item"><i class="fas fa-clock"></i><div>Mon–Sat: 8am–7pm · Sun: 10am–5pm</div></div>
+
+            <h3 style="margin-top:18px">Follow Us</h3>
+            <div style="margin-top:10px" class="socials">
+              <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3>Send a message</h3>
+            <form onsubmit="event.preventDefault(); alert('Thank you — we will contact you shortly!');">
+              <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
+              <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div>
+              <div class="form-group"><input type="tel" name="phone" placeholder="Your Phone"></div>
+              <div class="form-group"><textarea name="message" placeholder="Your Message" required></textarea></div>
+              <button class="submit" type="submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo" aria-label="Footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>QueenBee Kenya</h4>
+          <p>Creating beautiful floral arrangements and unique gifts for every Kenyan occasion since 2015.</p>
+          <div style="margin-top:12px">
+            <a class="socials" href="#" aria-label="facebook"><i class="fab fa-facebook-f"></i></a>
+            <a class="socials" href="#" aria-label="instagram"><i class="fab fa-instagram"></i></a>
+            <a class="socials" href="#" aria-label="whatsapp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul style="list-style:none;margin-top:12px;padding:0">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Customer Service</h4>
+          <ul style="list-style:none;margin-top:12px;padding:0">
+            <li><a href="#">Delivery Areas</a></li>
+            <li><a href="#">Returns & Refunds</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Payment Methods</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Newsletter</h4>
+          <p>Get offers, giveaways and seasonal deals.</p>
+          <form onsubmit="event.preventDefault(); alert('Subscribed — thank you!');" style="margin-top:10px">
+            <input type="email" placeholder="Your email" required style="padding:10px;border-radius:8px;border:none;width:100%;margin-bottom:8px">
+            <button class="submit" style="width:100%">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:28px;color:rgba(255,255,255,0.8);font-size:0.95rem">
+        &copy; <span id="year"></span> QueenBee Gifts & Flowers Kenya. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART OVERLAY & MODAL -->
+  <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="cart-modal" role="document" aria-labelledby="cartTitle">
+      <div class="cart-header">
+        <div style="display:flex;align-items:center;gap:12px">
+          <i class="fas fa-shopping-bag" style="font-size:20px;color:var(--royal-purple)"></i>
+          <div>
+            <div id="cartTitle" style="font-weight:700">Your Cart</div>
+            <div style="font-size:0.85rem;color:#6b6b6b" id="cartSummaryCount">0 items</div>
+          </div>
+        </div>
+        <div>
+          <button class="secondary-btn" id="closeCartBtn" aria-label="Close cart">Close</button>
+        </div>
+      </div>
+
+      <div class="cart-body" id="cartBody">
+        <!-- cart rows -->
+      </div>
+
+      <div class="cart-footer">
+        <div class="row">
+          <div style="display:flex;gap:10px;flex:1;flex-direction:column">
+            <label for="customerName" style="font-weight:600">Customer Name</label>
+            <input id="customerName" type="text" placeholder="e.g. Mercy Gikonyo" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div style="display:flex;gap:10px;flex:1;flex-direction:column">
+            <label for="deliveryLocation" style="font-weight:600">Delivery Location (Nairobi)</label>
+            <input id="deliveryLocation" type="text" placeholder="e.g. Westlands, House 12, Off Parklands Road" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div style="font-weight:700">Subtotal</div>
+          <div id="cartSubtotal">KSh 0</div>
+        </div>
+
+        <div style="display:flex;gap:10px">
+          <button class="checkout-btn" id="checkoutBtn" aria-label="Checkout via WhatsApp">
+            Checkout via WhatsApp
+            <span style="margin-left:8px"><i class="fab fa-whatsapp"></i></span>
+          </button>
+          <button class="secondary-btn" id="clearCartBtn">Clear</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    mobileToggle && mobileToggle.addEventListener('click', () => {
+      const shown = mobileNav.style.display === 'block';
+      mobileNav.style.display = shown ? 'none' : 'block';
+      mobileNav.setAttribute('aria-hidden', shown ? 'true' : 'false');
+    });
+
+    // Testimonial slider
+    (function(){
+      const slides = document.querySelectorAll('.testimonial');
+      const dots = document.querySelectorAll('.dot');
+      let idx = 0;
+      function show(i){
+        slides.forEach(s => s.classList.remove('active'));
+        dots.forEach(d => d.classList.remove('active'));
+        slides[i].classList.add('active');
+        dots[i].classList.add('active');
+      }
+      dots.forEach(d => d.addEventListener('click', ()=>{ idx = Number(d.dataset.index); show(idx); })); 
+      setInterval(()=>{ idx = (idx + 1) % slides.length; show(idx); }, 5000);
+    })();
+
+    // Header shadow on scroll
+    const mainHeader = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 40) mainHeader.style.boxShadow = '0 12px 30px rgba(0,0,0,0.12)';
+      else mainHeader.style.boxShadow = '0 6px 18px rgba(0,0,0,0.06)';
+    });
+
+    /* ------------------------------
+       Product Data (5 demo products)
+       ------------------------------ */
+    const PRODUCTS = [
+      {
+        id: 'p1',
+        name: 'Rose Elegance Bouquet',
+        price: 6500,
+        img: 'https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=1400&q=60',
+        desc: 'Classic red roses arranged in a luxury wrap — a timeless romantic choice.'
+      },
+      {
+        id: 'p2',
+        name: 'Sunshine Mix',
+        price: 5200,
+        img: 'https://images.unsplash.com/photo-1487070183337-51f6b2226bf0?auto=format&fit=crop&w=1400&q=60',
+        desc: 'A vibrant mixed bouquet to brighten someone\'s day.'
+      },
+      {
+        id: 'p3',
+        name: 'Lavender Dreams',
+        price: 7800,
+        img: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=1400&q=60',
+        desc: 'Lavender, eucalyptus and soft pastels for a calming arrangement.'
+      },
+      {
+        id: 'p4',
+        name: 'Custom Gift Basket',
+        price: 8500,
+        img: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1400&q=60',
+        desc: 'Floral arrangement plus gourmet treats — perfect as a premium gift.'
+      },
+      {
+        id: 'p5',
+        name: 'Luxury Surprise Box',
+        price: 12000,
+        img: 'https://images.unsplash.com/photo-1524594154909-2a6b9b8c8d2f?auto=format&fit=crop&w=1400&q=60',
+        desc: 'Handpicked seasonal blooms + deluxe treats in an elegant box.'
+      }
+    ];
+
+    // Simple in-memory cart
+    let cart = {}; // { productId: { ...product, qty } }
+
+    // DOM refs
+    const productsGrid = document.getElementById('productsGrid');
+    const cartCountEl = document.getElementById('cartCount');
+    const overlay = document.getElementById('overlay');
+    const cartBody = document.getElementById('cartBody');
+    const cartSubtotalEl = document.getElementById('cartSubtotal');
+    const cartSummaryCount = document.getElementById('cartSummaryCount');
+
+    // Build product cards
+    function renderProducts() {
+      productsGrid.innerHTML = '';
+      PRODUCTS.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+          <div class="pimg"><img src="${p.img}" alt="${escapeHtml(p.name)}"></div>
+          <div class="pbody">
+            <h3>${escapeHtml(p.name)}</h3>
+            <div class="meta">
+              <div class="price">KSh ${numberWithCommas(p.price)}</div>
+              <div><button class="btn add-to-cart" data-id="${p.id}">Add to Cart</button></div>
+            </div>
+            <p style="margin-top:10px;color:rgba(44,62,80,0.8)">${escapeHtml(p.desc)}</p>
+          </div>
+        `;
+        productsGrid.appendChild(card);
+      });
+
+      // attach handlers
+      document.querySelectorAll('.add-to-cart').forEach(btn => {
+        btn.addEventListener('click', () => {
+          addToCart(btn.dataset.id, 1);
+        });
+      });
+    }
+
+    // add to cart
+    function addToCart(productId, qty = 1) {
+      const product = PRODUCTS.find(p => p.id === productId);
+      if(!product) return;
+      if(cart[productId]) cart[productId].qty += qty;
+      else cart[productId] = {...product, qty};
+      updateCartUI();
+      flashCartButton();
+    }
+
+    function updateCartUI(){
+      const totalItems = Object.values(cart).reduce((s, it) => s + it.qty, 0);
+      cartCountEl.textContent = totalItems;
+      renderCart();
+    }
+
+    function renderCart(){
+      cartBody.innerHTML = '';
+      const items = Object.values(cart);
+      if(items.length === 0){
+        cartBody.innerHTML = `<div style="padding:22px;text-align:center;color:#6b6b6b">Your cart is empty. Add something lovely ✨</div>`;
+        cartSubtotalEl.textContent = 'KSh 0';
+        cartSummaryCount.textContent = '0 items';
+        return;
+      }
+
+      let subtotal = 0;
+      items.forEach(it => {
+        subtotal += it.price * it.qty;
+        const row = document.createElement('div');
+        row.className = 'cart-row';
+        row.innerHTML = `
+          <img src="${it.img}" alt="${escapeHtml(it.name)}" />
+          <div class="meta">
+            <div style="font-weight:700">${escapeHtml(it.name)}</div>
+            <div style="font-size:0.9rem;color:#666">KSh ${numberWithCommas(it.price)} each</div>
+            <div style="margin-top:6px" class="qty-controls">
+              <button class="qty-decrease" data-id="${it.id}" aria-label="Decrease">−</button>
+              <div style="min-width:34px;text-align:center">${it.qty}</div>
+              <button class="qty-increase" data-id="${it.id}" aria-label="Increase">+</button>
+              <button class="secondary-btn" style="margin-left:10px" data-id="${it.id}" aria-label="Remove">Remove</button>
+            </div>
+          </div>
+          <div style="font-weight:700">KSh ${numberWithCommas(it.price * it.qty)}</div>
+        `;
+        cartBody.appendChild(row);
+      });
+
+      cartSubtotalEl.textContent = 'KSh ' + numberWithCommas(subtotal);
+      cartSummaryCount.textContent = `${items.length} item${items.length > 1 ? 's' : ''}`;
+
+      // attach qty handlers
+      cartBody.querySelectorAll('.qty-decrease').forEach(b => {
+        b.addEventListener('click', () => {
+          const id = b.dataset.id;
+          if(cart[id]){
+            cart[id].qty = Math.max(0, cart[id].qty - 1);
+            if(cart[id].qty === 0) delete cart[id];
+            updateCartUI();
+          }
+        });
+      });
+      cartBody.querySelectorAll('.qty-increase').forEach(b => {
+        b.addEventListener('click', () => {
+          const id = b.dataset.id;
+          if(cart[id]){
+            cart[id].qty += 1;
+            updateCartUI();
+          }
+        });
+      });
+      cartBody.querySelectorAll('.secondary-btn[data-id]').forEach(b => {
+        b.addEventListener('click', () => {
+          const id = b.dataset.id;
+          if(cart[id]) delete cart[id];
+          updateCartUI();
+        });
+      });
+    }
+
+    // CART overlay controls
+    const openCartBtn = document.getElementById('openCartBtn');
+    const closeCartBtn = document.getElementById('closeCartBtn');
+    const clearCartBtn = document.getElementById('clearCartBtn');
+    openCartBtn && openCartBtn.addEventListener('click', showCart);
+    closeCartBtn && closeCartBtn.addEventListener('click', hideCart);
+    clearCartBtn && clearCartBtn.addEventListener('click', () => {
+      if(confirm('Clear cart?')) {
+        cart = {};
+        updateCartUI();
+        hideCart();
+      }
+    });
+    overlay.addEventListener('click', (e) => {
+      if(e.target === overlay) hideCart();
+    });
+
+    function showCart(){
+      overlay.style.display = 'flex';
+      overlay.setAttribute('aria-hidden', 'false');
+      document.querySelector('.cart-modal').classList.add('show');
+      // focus first input for accessibility
+      setTimeout(()=>document.getElementById('customerName').focus(), 160);
+      renderCart();
+    }
+    function hideCart(){
+      overlay.style.display = 'none';
+      overlay.setAttribute('aria-hidden', 'true');
+      document.querySelector('.cart-modal').classList.remove('show');
+    }
+
+    // WhatsApp Checkout
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    checkoutBtn.addEventListener('click', () => {
+      const name = (document.getElementById('customerName').value || '').trim();
+      const location = (document.getElementById('deliveryLocation').value || '').trim();
+      if(!name || !location){
+        alert('Please enter your name and delivery location before checkout.');
+        document.getElementById('customerName').focus();
+        return;
+      }
+      const items = Object.values(cart);
+      if(items.length === 0){
+        alert('Your cart is empty.');
+        return;
+      }
+
+      // Build message
+      let msgLines = [];
+      msgLines.push('*QueenBee Order*');
+      msgLines.push(`*Customer:* ${name}`);
+      msgLines.push(`*Delivery:* ${location}`);
+      msgLines.push('');
+      msgLines.push('*Order items:*');
+
+      let subtotal = 0;
+      items.forEach((it, i) => {
+        const line = `${i+1}. ${it.name} — KSh ${numberWithCommas(it.price)} x ${it.qty} = KSh ${numberWithCommas(it.price * it.qty)}`;
+        msgLines.push(line);
+        subtotal += it.price * it.qty;
+      });
+
+      msgLines.push('');
+      msgLines.push(`*Subtotal:* KSh ${numberWithCommas(subtotal)}`);
+      // optionally add delivery charge logic: (example) free >2000
+      let deliveryNote = (subtotal >= 2000) ? 'Free delivery (Nairobi)' : 'Delivery fee may apply';
+      msgLines.push(`*Delivery:* ${deliveryNote}`);
+      msgLines.push('');
+      msgLines.push('Please confirm availability and preferred delivery time. Thank you!');
+
+      const fullMsg = encodeURIComponent(msgLines.join('\n'));
+      // WhatsApp number in international format without spaces/punctuation
+      const waNumber = '254705561386';
+      const waUrl = `https://wa.me/${waNumber}?text=${fullMsg}`;
+
+      // Open WhatsApp (new tab)
+      window.open(waUrl, '_blank');
+
+      // Optionally keep cart or clear it — we'll keep it, user can clear after sending
+    });
+
+    // Utility helpers
+    function numberWithCommas(x){
+      return String(x).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    function escapeHtml(text) {
+      return (text + '').replace(/[&<>"']/g, function(m) {
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];
+      });
+    }
+
+    // small UX: flash cart
+    function flashCartButton(){
+      openCartBtn.animate([
+        { transform: 'translateY(0)' },
+        { transform: 'translateY(-6px)' },
+        { transform: 'translateY(0)' }
+      ], { duration: 320, easing: 'ease' });
+    }
+
+    // Initialize
+    renderProducts();
+    updateCartUI();
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e){
+        const href = this.getAttribute('href');
+        if(!href || href === '#') return;
+        const el = document.querySelector(href);
+        if(el){
+          e.preventDefault();
+          const offset = 90; // header + topbar
+          const top = el.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({top, behavior:'smooth'});
+          if(window.innerWidth < 980) { mobileNav.style.display = 'none'; mobileNav.setAttribute('aria-hidden','true'); }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
